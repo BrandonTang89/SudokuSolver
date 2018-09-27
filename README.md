@@ -42,6 +42,6 @@ Upon attempting to solve a Sudoku board:
   <li>Try substituting the square with the least possiblilies with each of its possibilities and solving the newly subsituted board</li>
 </ul>
   
-<i>Note: Python 3.7+ and numpy are required for running the .py or .pyw version.</i><br>
+<b>Note: Python 3.7+ and numpy are required for running the .py or .pyw version.</b><br>
 Numpy can be installed with:
 <pre>pip install numpy</pre>
