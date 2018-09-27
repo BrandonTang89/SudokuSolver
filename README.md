@@ -3,7 +3,7 @@ A Python console application to solve the standard 9 by 9 Sudoku puzzle.
 
 <b>Input Format</b><br>
 <ol>
-  <li>The input Sudoku board is written as a 9x9 grid of integars in range [0,9].<br></li>
+  <li>The input Sudoku board is written as a 9x9 grid of integers in range [0,9].<br></li>
   <li>Rows are separated by a newline character (\n).<br></li>
   <li>0 represents an empty square.<br></li>
 </ol>
