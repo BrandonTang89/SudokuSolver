@@ -5,7 +5,7 @@ Both GUI and CLI versions available.
 <b>Input Format</b><br>
 <ol>
   <li>The input Sudoku board is written as a 9x9 grid of integers in range [0,9].<br></li>
-  <li>Rows are separated by a newline character (\n).<br></li>
+  <li>Rows are separated by a newline character <enter>.<br></li>
   <li>0 represents an empty square.<br></li>
 </ol>
   
