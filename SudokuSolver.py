@@ -1,4 +1,5 @@
 import numpy as np
+import time
 '''
 Example Grids to Input
 240000009
@@ -35,11 +36,10 @@ dx = np.array([0,1,2,0,1,2,0,1,2])
 dy = np.array([0,0,0,1,1,1,2,2,2])
 def getgroupset(grid,groupx,groupy):
     s = set()
-    tlx = groupx * 3
-    tly = groupy * 3
-    grid = grid.transpose()
+    tlx = groupx * 3                                                    #The x coordinate of the top left square in group
+    tly = groupy * 3                                                    #The y coordinate of the top left square in group
     for i in range(9):
-        s.add(grid[tlx+dx[i]][tly+dy[i]])
+        s.add(grid[tly+dy[i]][tlx+dx[i]])
     return s
 
 #Function to check if a sudoku grid is solved------------------------------------------
@@ -63,7 +63,6 @@ def check(grid):
     grid = grid.transpose()
 
     #Check groups (3x3 squares)
-    
     for groupx in range(3):
         for groupy in range(3):
             s = getgroupset(grid, groupx, groupy)
@@ -71,8 +70,9 @@ def check(grid):
                 return False
     return True
 
+#Recursive function to solve the grid--------------------------------------------------
 def solve(grid):
-    if check(grid):                                                     #Return if solved
+    if check(grid):                                                     #Return if solved (base case)
         return True, grid
 
     min_no = 10                                                         #The min number of possibilities
@@ -101,10 +101,13 @@ def solve(grid):
             return True, solved_grid
     return False, False
     
-
+start = time.time()
 solved, grid = solve(grid)
 if solved:
     print("Solved!")
+    print("Time Taken:", str(time.time()-start) + 's')
     print (grid)
 else:
     print("Seems actually impossible...")
+
+input("Press the return/enter key to quit...\n")
