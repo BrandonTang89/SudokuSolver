@@ -52,6 +52,8 @@ Upon attempting to solve a Sudoku board:
   <li>Find the different possibilities of each empty square</li>
   <li>Try substituting the square with the least possiblilies with each of its possibilities and solving the newly subsituted board</li>
 </ul>
+
+We can quantify the difficulty of a specific Sudoku puzzle by counting how many substitutions are needed for the program to solve it :)
   
 <b>Note: Python 3.7+ and numpy are required for running the .py or .pyw version.</b><br>
 Numpy can be installed with:
