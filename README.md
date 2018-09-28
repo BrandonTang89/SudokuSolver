@@ -8,8 +8,19 @@ Both GUI and CLI versions available.
   <li>Rows are separated by a newline character (enter).<br></li>
   <li>0 represents an empty square.<br></li>
 </ol>
-  
-Examples can be found below.
+
+Example
+<pre>
+240000009
+090031000
+001590080
+000000076
+000803000
+960000000
+030045100
+000620090
+600000052
+</pre>
 
 <b>Mechanism</b><br>
 Solves via recursion.<br>
@@ -26,18 +37,7 @@ We can quantify the difficulty of a specific Sudoku puzzle by counting how many 
 Numpy can be installed with:
 <pre>pip install numpy</pre>
 
-<b>Examples of input:</b>
-<pre>
-240000009
-090031000
-001590080
-000000076
-000803000
-960000000
-030045100
-000620090
-600000052
-</pre>
+<b>More Examples of Input:</b>
 <pre>
 764000100
 000070806
