@@ -21,6 +21,16 @@ Example Grids to Input
 050902301
 902010000
 006000289
+
+063400000
+200000090
+000870106
+000040300
+420000057
+007080000
+902056000
+050000009
+000008570
     '''
 
 print("------------------------")
@@ -78,10 +88,13 @@ def check(grid):
     return True
 
 #Recursive function to solve the grid--------------------------------------------------
+counter =  -1
 def solve(grid):
     if check(grid):                                                     #Return if solved (base case)
         return True, grid
 
+    global counter
+    counter+= 1
     min_no = 10                                                         #The min number of possibilities
     fullset = set([1,2,3,4,5,6,7,8,9])                                  #Set of numbers in each row, column and group
     tgrid = grid.transpose()                                            #Transposed Grid
@@ -113,6 +126,7 @@ solved, grid = solve(grid)
 if solved:
     print("Solved!")
     print("Time Taken:", str(time.time()-start) + 's')
+    print("No. of substitutions:", counter)
     print (grid)
 else:
     print("Seems actually impossible...")
