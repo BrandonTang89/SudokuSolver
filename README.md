@@ -9,7 +9,24 @@ Both GUI and CLI versions available.
   <li>0 represents an empty square.<br></li>
 </ol>
   
-Examples:
+Examples can be found below.
+
+<b>Mechanism</b><br>
+Solves via recursion.<br>
+Upon attempting to solve a Sudoku board:
+<ul>
+  <li>Check if the board is already solved (base case of recursion)</li>
+  <li>Find the different possibilities of each empty square</li>
+  <li>Try substituting the square with the least possiblilies with each of its possibilities and solving the newly subsituted board</li>
+</ul>
+
+We can quantify the difficulty of a specific Sudoku puzzle by counting how many substitutions are needed for the program to solve it :)
+  
+<b>Note: Python 3.7+ and numpy are required for running the .py or .pyw version.</b><br>
+Numpy can be installed with:
+<pre>pip install numpy</pre>
+
+<b>Examples of input:</b>
 <pre>
 240000009
 090031000
@@ -43,18 +60,3 @@ Examples:
 050000009
 000008570
 </pre>
-
-<b>Mechanism</b><br>
-Solves via recursion.<br>
-Upon attempting to solve a Sudoku board:
-<ul>
-  <li>Check if the board is already solved (base case of recursion)</li>
-  <li>Find the different possibilities of each empty square</li>
-  <li>Try substituting the square with the least possiblilies with each of its possibilities and solving the newly subsituted board</li>
-</ul>
-
-We can quantify the difficulty of a specific Sudoku puzzle by counting how many substitutions are needed for the program to solve it :)
-  
-<b>Note: Python 3.7+ and numpy are required for running the .py or .pyw version.</b><br>
-Numpy can be installed with:
-<pre>pip install numpy</pre>
