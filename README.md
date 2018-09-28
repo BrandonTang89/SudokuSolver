@@ -9,7 +9,7 @@ Both GUI and CLI versions available.
   <li>0 represents an empty square.<br></li>
 </ol>
 
-Example
+Example:
 <pre>
 240000009
 090031000
