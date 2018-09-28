@@ -10,7 +10,11 @@ cur_instruction.set("Enter Sudoku Board Below")
 instruction_label = Label(r, font = "Consolas 14", textvariable=cur_instruction).pack()
 t = Text(r, height=15, width=40, font="Consolas 14 bold")                   #Text Box
 t.pack()
+
 def solve():
+    global substitution_counter
+    substitution_counter = -1                                               #Remove one for the first call of solve()
+    
     #Parsing Text from GUI input box
     while True:
         try:
@@ -70,7 +74,8 @@ def solve():
     def solve(grid):
         if check(grid):                                                     #Return if solved (base case)
             return True, grid
-
+        global substitution_counter
+        substitution_counter +=1
         min_no = 10                                                         #The min number of possibilities
         fullset = set([1,2,3,4,5,6,7,8,9])                                  #Set of numbers in each row, column and group
         tgrid = grid.transpose()                                            #Transposed Grid
@@ -106,12 +111,14 @@ def solve():
     t.delete('1.0', 'end')
     if solved:
         cur_instruction.set( "Solved")
+        t.insert('end', "Solved!!\n")
+        t.insert('end', "Time Taken:" +  str(time.time()-start) + 's\n')
+        t.insert('end', "Number of substitutions: " + str(substitution_counter) + '\n')
+        t.insert('end', grid)
         print("Solved!")
         print("Time Taken:", str(time.time()-start) + 's')
+        print("Number of substitutions", substitution_counter)
         print (grid)
-        t.insert('end', "Solved!!\n")
-        t.insert('end', "Time Taken:" +  str(time.time()-start) + 's\n') 
-        t.insert('end', grid)
     else:
         cur_instruction.set( "No Solution")
         print("Seems actually impossible...")
